@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MedicalManager</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_gcc">gcc</string>
+    <string-array name="counties">
+        <item>Ireland</item>
+        <item>England</item>
+        <item>Scotland</item>
+        <item>Wales</item>
+    </string-array>
+    <string-array name="days">
+        <item>Times a day</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+</resources>

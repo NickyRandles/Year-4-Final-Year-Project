@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.project.nicky.medicalmanager.Patient.AddMedicationsActivity">
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/medicationNameField"
+                    android:hint="Medication Name"
+                    android:layout_alignParentTop="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Start Date:"
+                    android:id="@+id/startDateText"
+                    android:layout_below="@+id/medicationNameField"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20/4/2016"
+                    android:id="@+id/startDateButton"
+                    android:layout_below="@+id/medicationNameField"
+                    android:layout_toRightOf="@id/startDateText"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="dateButtonClicked"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Time:"
+                    android:id="@+id/timeText"
+                    android:layout_below="@+id/startDateButton"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9:00"
+                    android:id="@+id/timeButton"
+                    android:layout_below="@+id/startDateButton"
+                    android:layout_toRightOf="@id/timeText"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="timeButtonClicked"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Duration"
+                    android:id="@+id/dayText"
+                    android:layout_below="@+id/timeButton"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/durationRadioGroup"
+                    android:layout_below="@id/dayText">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/continuousRadioButton"
+                        android:text="Continuous"
+                        android:checked="true" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/numberRadioButton"
+                        android:text="Number of days" />
+                </RadioGroup>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Done"
+                    android:id="@+id/doneButton"
+                    android:layout_below="@+id/durationRadioGroup"
+                    android:textColor="#ffffff"
+                    android:background="#0000ff"
+                    android:onClick="doneButtonClicked" />
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

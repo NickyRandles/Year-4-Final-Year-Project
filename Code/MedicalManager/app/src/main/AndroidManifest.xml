@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.project.nicky.medicalmanager" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCDxxw2RYQt9H9ae6WIE4NVsFyF-ZgcRss"/>
+
+        <!-- ****** Welcome Activity ****** -->
+        <activity android:name=".Startup.WelcomeActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- ****** Login Activity ****** -->
+        <activity
+            android:name=".Startup.LoginActivity"
+            android:label="Login"
+            android:parentActivityName=".Startup.WelcomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Startup.WelcomeActivity" />
+        </activity>
+        <!-- ****** Register Activity ****** -->
+        <activity
+            android:name=".Startup.RegisterActivity"
+            android:label="Register"
+            android:parentActivityName=".Startup.WelcomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Startup.WelcomeActivity" />
+        </activity>
+        <!-- ****** Patient Register Activity ****** -->
+        <activity
+            android:name=".Startup.PatientRegisterActivity"
+            android:label="Patient Register"
+            android:parentActivityName=".Startup.RegisterActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Startup.RegisterActivity" />
+        </activity>
+        <!-- ****** Doctor Register Activity ****** -->
+        <activity
+            android:name=".Startup.DoctorRegisterActivity"
+            android:label="Doctor Register"
+            android:parentActivityName=".Startup.RegisterActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Startup.RegisterActivity" />
+        </activity>
+        <!-- ****** Home Activity ****** -->
+        <activity android:name=".Home.HomeActivity" >
+        </activity>
+        <!-- ****** Diary Entry Activity ****** -->
+        <activity
+            android:name=".Home.DiaryEntryActivity"
+            android:label="Diary Entry"
+            android:parentActivityName=".Home.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home.HomeActivity" />
+        </activity>
+        <!-- ****** Add Medications Activity ****** -->
+        <activity
+            android:name=".Patient.AddMedicationsActivity"
+            android:label="Add Medications"
+            android:parentActivityName=".Home.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home.HomeActivity" />
+        </activity>
+        <!-- ****** Add Appointments Activity ****** -->
+        <activity
+            android:name=".Doctor.AddAppointmentsActivity"
+            android:label="Add Appointments"
+            android:parentActivityName=".Home.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home.HomeActivity" />
+        </activity>
+        <!-- ****** Search Activity ****** -->
+        <activity
+            android:name=".Search.SearchActivity"
+            android:label="Search"
+            android:parentActivityName=".Home.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Search.SearchActivity" />
+        </activity>
+        <!-- ****** Name Search Activity ****** -->
+        <activity
+            android:name=".Search.NameSearchActivity"
+            android:label="Search By Name"
+            android:parentActivityName=".Search.SearchActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Search.SearchActivity" />
+        </activity>
+        <!-- ****** Location Search Activity ****** -->
+        <activity
+            android:name=".Search.LocationSearchActivity"
+            android:label="Search By Location"
+            android:parentActivityName=".Search.SearchActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Search.SearchActivity" />
+
+            <intent-filter>
+                <action android:name="map_filter" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- ****** Profile Activity ****** -->
+        <activity
+            android:name=".Search.ProfileActivity"
+            android:label="Profile"
+            android:parentActivityName=".Search.NameSearchActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Search.NameSearchActivity" />
+        </activity>
+        <!-- ****** Available Appointments Activity ****** -->
+        <activity
+            android:name=".Patient.AvailableAppointmentsActivity"
+            android:label="Available Appointments"
+            android:parentActivityName=".Patient.AvailableAppointmentsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Patient.AvailableAppointmentsActivity" />
+        </activity>
+
+        <service
+            android:name=".Home.AppointmentService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+    </application>
+
+</manifest>
